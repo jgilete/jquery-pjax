@@ -322,7 +322,7 @@ function pjax(options) {
 
     executeScriptTags(container.scripts)
 
-    var scrollTo = options.scrollTo
+    var scrollTo = typeof options.scrollTo == 'function' ? options.scrollTo() : options.scrollTo;
 
     // Ensure browser scrolls to the element referenced by the URL anchor
     if (hash) {
